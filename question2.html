@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <title>فردي أم زوجي؟ 🥴</title>
-  </head>
-  <body>
-    <!-- السؤال الثاني -->
-    <h2 id="numberType"></h2>
-    <div class="center">
-      <input
-        dir="rtl"
-        type="text"
-        placeholder="أدخل العدد"
-        id="height"
-        style="text-align: center; font-size: 1rem; margin: 0.4rem"
-      />
-    </div>
-    <div class="center">
-      <button onclick="">اختبر 🤓</button>
-    </div>
-    <script>
-      // قم بإنشاء الدالة هنا
-      // numberType << idقم بإظهار النتيجة النهائية باستخدام ال
-      // لا تنسى مناداة الدالة عند الضغط على الزر
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>فردي أم زوجي؟ 🥴</title>
+</head>
+
+<body onload="checkOddEven()">
+  <!-- السؤال الثاني -->
+  <h2 id="numberType"></h2><br>
+  <div class="center">
+    <input dir="rtl" type="text" placeholder="أدخل العدد" id="height"
+      style="text-align: center; font-size: 1rem; margin: 0.4rem" />
+  </div>
+  <div class="center">
+    <button onclick="checkOddEven()">اختبر 🤓</button>
+  </div>
+  <script>
+    // قم بإنشاء الدالة هنا
+    // numberType << idقم بإظهار النتيجة النهائية باستخدام ال
+    // لا تنسى مناداة الدالة عند الضغط على الزر
+    function checkOddEven() {
+      var num = document.getElementById('height').value
+      var result = ''
+
+      var num = Math.round((Math.random() * 100))
+      document.getElementById("height").value = num
+      console.log(num);
+
+      if (num % 2 == 0) {
+        result = "العدد زوجي"
+      } else if (num % 2 == 1) {
+        result = "العدد فردي"
+      }
+
+      document.getElementById('numberType').innerHTML = result
+      console.log(result);
+    }
+
+
+  </script>
+</body>
+
 </html>
